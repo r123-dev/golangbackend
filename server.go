@@ -5,11 +5,13 @@ import (
 	"net/http"
 	"os"
 
+	config "private-chat/config"
+
+	handle "private-chat/routes"
+	utils "private-chat/utils"
+
 	"github.com/gorilla/mux"
 	"github.com/joho/godotenv"
-
-	config "private-chat/config"
-	utils "private-chat/utils"
 )
 
 func main() {
@@ -24,7 +26,7 @@ func main() {
 
 	route := mux.NewRouter()
 
-	AddApproutes(route)
+	handle.AddApproutes(route)
 
 	serverPath := ":" + os.Getenv("PORT")
 

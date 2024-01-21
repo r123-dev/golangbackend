@@ -3,7 +3,7 @@ package config
 import (
 	"context"
 	"log"
-	"os"
+	//"log"
 
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
@@ -16,7 +16,7 @@ var MongoDBClient *mongo.Client
 func ConnectDatabase() {
 	log.Println("Database connecting...")
 	// Set client options
-	clientOptions := options.Client().ApplyURI(os.Getenv("DB_URL"))
+	clientOptions := options.Client().ApplyURI("mongodb+srv://rohanmourya879:vivek123@cluster0.upxigtg.mongodb.net/Vivek")//os.Getenv("DB_URL"))
 
 	// Connect to MongoDB
 	client, err := mongo.Connect(context.TODO(), clientOptions)
