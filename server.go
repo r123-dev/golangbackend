@@ -19,7 +19,7 @@ func main() {
 	godotenv.Load()
 
 	fmt.Println(
-		fmt.Sprintf("%s%s%s%s", "Server will start at http://", os.Getenv("HOST"), ":", os.Getenv("PORT")),
+		fmt.Sprintf("%s%s%s%s", "Server will start at http://",os.Getenv("HOST"), ":", os.Getenv("PORT")),
 	)
 
 	config.ConnectDatabase()
